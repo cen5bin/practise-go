@@ -20,6 +20,7 @@ func handleConn(conn net.Conn) {
 			break
 		}
 		fmt.Printf("read %s", string(buf[:n]))
+		conn.Write([]byte("asdsada"))
 	}
 }
 
