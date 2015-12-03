@@ -14,12 +14,12 @@ func handleConn(conn net.Conn) {
 	defer conn.Close()
 	buf := make([]byte, 1024)
 	for {
-		n, err := conn.Read(buf)
+		_, err := conn.Read(buf)
 		if err != nil {
 			fmt.Println("read err: ", err)
 			break
 		}
-		fmt.Printf("read %s", string(buf[:n]))
+		//fmt.Printf("read %s", string(buf[:n]))
 		conn.Write([]byte("asdsada"))
 	}
 }
