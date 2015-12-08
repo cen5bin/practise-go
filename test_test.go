@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"practise-go/client"
-	"practise-go/server"
+	"practise-go/net/client"
+	"practise-go/net/server"
 	//	"sync"
 	"testing"
 	"time"
@@ -24,6 +24,7 @@ func TestNet(t *testing.T) {
 	go func() {
 		ser := &server.Server{}
 		ser.Listen(port)
+
 	}()
 	time.Sleep(3 * time.Second)
 	c := &client.Client{}
